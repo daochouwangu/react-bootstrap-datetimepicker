@@ -124,6 +124,17 @@ class Basic extends Component {
                   <pre> {'<DateTimeField mode="date" />'} </pre>
               </div>
             </div>
+            <div className="row">
+              <div className="col-xs-12">
+                  use locale
+                  <DateTimeField
+                      mode="date"
+                      />
+                  <pre>
+                      import moment form "moment";<br />
+                      moment.locale("zh-cn");</pre>
+              </div>
+            </div>
           </div>
       );
    }

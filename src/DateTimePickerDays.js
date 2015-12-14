@@ -68,6 +68,22 @@ export default class DateTimePickerDays extends Component {
     return html;
   }
 
+  renderWeekdays = () => {
+    var  weeks, weekdays;
+    weekdays = moment.weekdaysMin();
+    var  i = 0;
+    weeks = [];
+    while (i < 7) {
+      weeks.push(React.createElement(
+        "th",
+        { className: "dow" , key: i },
+        weekdays[i]
+      ));
+      i++;
+    }
+    return weeks;
+  }
+
   render() {
     return (
     <div className="datepicker-days" style={{display: "block"}}>
@@ -82,19 +98,7 @@ export default class DateTimePickerDays extends Component {
             </tr>
 
             <tr>
-              <th className="dow">Su</th>
-
-              <th className="dow">Mo</th>
-
-              <th className="dow">Tu</th>
-
-              <th className="dow">We</th>
-
-              <th className="dow">Th</th>
-
-              <th className="dow">Fr</th>
-
-              <th className="dow">Sa</th>
+              {this.renderWeekdays()}
             </tr>
           </thead>
 
